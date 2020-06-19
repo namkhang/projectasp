@@ -57,3 +57,4 @@ C:\hoc asp\Doannhom\Doannhom\obj\Debug\Doannhom.csproj.CoreCompileInputs.cache
 C:\hoc asp\Doannhom\Doannhom\obj\Debug\Doannhom.csproj.CopyComplete
 C:\hoc asp\Doannhom\Doannhom\obj\Debug\Doannhom.dll
 C:\hoc asp\Doannhom\Doannhom\obj\Debug\Doannhom.pdb
+C:\hoc asp\Doannhom\Doannhom\bin\CollectionPager.dll

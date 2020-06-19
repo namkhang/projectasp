@@ -26,8 +26,10 @@ namespace Doannhom
             SqlDataAdapter da = new SqlDataAdapter(q, connect);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            this.DataList1.DataSource = dt;
-            this.DataList1.DataBind();
+            CollectionPager1.PageSize = 12;
+            CollectionPager1.DataSource = dt.DefaultView;
+            CollectionPager1.BindToControl = DataList1;
+            DataList1.DataSource = CollectionPager1.DataSourcePaged;
 
         }
 

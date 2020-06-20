@@ -7,9 +7,9 @@
     <title>Login</title>
     <link href="login.css" rel="stylesheet" />
 </head>
-<body>
+<body style="background-image:url(thiennhien.jpg); z-index:1;" >
     <form id="form1" runat="server">
-        <div class="login">
+        <div  class="login">
         <h2>Đăng nhập </h2>
         
             <p>UserName</p>

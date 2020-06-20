@@ -18,6 +18,8 @@ namespace Doannhom
                 GridView1.DataBind();
                 GridView2.DataSource = kn.laydata("SELECT * FROM MATHANG");
                 GridView2.DataBind();
+                GridView3.DataSource = kn.laydata("SELECT * FROM DONHANG");
+                GridView3.DataBind();
             }
         }
 
@@ -181,6 +183,59 @@ namespace Doannhom
                 Response.Write("<script>alert('Cập nhật không thành công');</script>");
             }  
             
+        }
+
+        protected void GridView3_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            string tendangnhap = e.Values["tendangnhap"].ToString();
+            string mahang = e.Values["mahang"].ToString();
+
+            int kq = kn.xuly("DELETE DONHANG WHERE tendangnhap = '"+tendangnhap+"' AND mahang = '" + mahang + "'");
+            if (kq > 0)
+            {
+                Response.Write("<script>alert('Xóa thành công');</script>");
+                GridView3.DataSource = kn.laydata("SELECT * FROM DONHANG");
+                GridView3.DataBind();
+            }
+            else
+            {
+                Response.Write("<script>alert('Xóa không thanh công');</script>");
+            }
+        }
+
+        protected void GridView3_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GridView3.EditIndex = e.NewEditIndex;
+            GridView3.DataSource = kn.laydata("SELECT * FROM DONHANG");
+            GridView3.DataBind();
+        }
+
+        protected void GridView3_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GridView3.EditIndex = -1;
+            GridView3.DataSource = kn.laydata("SELECT * FROM DONHANG");
+            GridView3.DataBind();
+        }
+
+        protected void GridView3_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            string tendangnhap = e.NewValues["tendangnhap"].ToString();
+            string mahang = e.NewValues["mahang"].ToString();
+            int soluong =int.Parse(e.NewValues["soluong"].ToString());
+            string size = e.NewValues["size"].ToString();
+            int kq = kn.xuly("UPDATE DONHANG SET soluong='" + soluong + "',size='" + size + "' WHERE tendangnhap='" + tendangnhap + "'" );
+
+            if (kq > 0)
+            {
+                Response.Write("<script>alert('Cập nhật thành công');</script>");
+                GridView3.DataSource = kn.laydata("SELECT * FROM DONHANG");
+                GridView3.EditIndex = -1;
+                GridView3.DataBind();
+            }
+            else
+            {
+                Response.Write("<script>alert('Cập nhật không thành công');</script>");
+            }
         }
     }
 }

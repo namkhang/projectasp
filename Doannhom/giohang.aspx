@@ -17,6 +17,7 @@
                     <asp:BoundField DataField="soluong" HeaderText="Số lượng" />
                     <asp:BoundField DataField="size" HeaderText="Size" />
                     <asp:BoundField DataField="thanhtien" HeaderText="Thành tiền" SortExpression="thanhtien" />
+                    <asp:BoundField DataField="tendangnhap" HeaderText="Tên người mua" />
                 </Columns>
             </asp:GridView>
             <asp:Label ID="Label1" runat="server" Text='<%# Eval("thanhtien") %>'></asp:Label>

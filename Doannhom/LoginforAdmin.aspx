@@ -7,10 +7,10 @@
     <title>Login for Admin</title>
     <link href="login.css" rel="stylesheet" />
 </head>
-<body>
+<body style="background-image:url(thiennhien.jpg)">
     <form id="form1" runat="server">
         <div class="login">
-        <h2>Đăng nhập </h2>
+        <h2 >Đăng nhập </h2>
         
             <p>Admin</p>
             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>

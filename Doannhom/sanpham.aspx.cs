@@ -14,7 +14,7 @@ namespace Doannhom
         SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\hoc asp\Doannhom\Doannhom\App_Data\webbanhang.mdf;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.IsPostBack) return;
+         
             string q;
             if (Context.Items["ml"] == null)
                 q = "SELECT *FROM MATHANG";

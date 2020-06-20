@@ -41,13 +41,13 @@ namespace Doannhom
             if (Request.Cookies["tendangnhap"] == null) return;
             string ten = Request.Cookies["tendangnhap"].Value;
             connect.Open();
-            string sql = "SELECT *FROM DONHANG WHERE tendangnhap ='" + ten + "' AND mahang='" + mahang + "'";
+            string sql = "SELECT *FROM DONHANG WHERE tendangnhap ='" + ten + "' AND mahang ='"+mahang+"'" ;
             SqlCommand cmd = new SqlCommand(sql, connect);
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
                 reader.Close();
-                cmd = new SqlCommand("UPDATE DONHANG SET soluong=soluong+ " + soluong + "WHERE tendangnhap ='" + ten + "'AND mahang='" + mahang + "'", connect);
+                cmd = new SqlCommand("UPDATE DONHANG SET mahang='" + mahang + "', soluong=soluong+ " + soluong+" , size ='"+size+"' WHERE tendangnhap ='" + ten + "'", connect);
 
             }
             else

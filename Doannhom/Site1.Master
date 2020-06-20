@@ -151,7 +151,7 @@
 
                <asp:DataList ID="DataList1" runat="server">
                    <ItemTemplate>
-                       <asp:LinkButton ID="LinkButton1" Text='<%# Eval("tenloai") %>'  CommandArgument ='<%#Eval("maloai") %>' runat="server" OnClick="LinkButton1_Click"></asp:LinkButton>
+                       <asp:LinkButton ID="LinkButton1" Text='<%# Eval("tenloai") %>'  CommandArgument ='<%#Eval("maloai") %>' runat="server" OnClick="LinkButton1_Click" CssClass="linkbutton" Font-Bold="False" Font-Size="20px" Font-Italic="True"></asp:LinkButton>
                    </ItemTemplate>
                </asp:DataList>
            </div>
@@ -163,7 +163,7 @@
            </div>
         </div>
         <div id="footer">
-            Dũng Shopeeee
+            Shopeeee
         </div>
 
 

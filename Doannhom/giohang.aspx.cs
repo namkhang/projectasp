@@ -14,9 +14,10 @@ namespace Doannhom
         SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\hoc asp\Doannhom\Doannhom\App_Data\webbanhang.mdf;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-            string q = "select DONHANG.mahang,tenhang,DONHANG.size,gia,soluong,"
+            string ten = Request.Cookies["tendangnhap"].Value;
+            string q = "select DONHANG.mahang,tenhang,DONHANG.size,gia,tendangnhap,soluong,"
             + "soluong*gia as thanhtien from DONHANG,MATHANG "
-            + " where MATHANG.mahang = DONHANG.mahang";
+            + " where MATHANG.mahang = DONHANG.mahang AND tendangnhap = '"+ten+"'" ;
             SqlDataAdapter da = new SqlDataAdapter(q, connect);
             DataTable dt = new DataTable();
             da.Fill(dt);

@@ -29,7 +29,7 @@ namespace Doannhom
             {
                 Response.Cookies["tendangnhap"].Value = ten;
                 Response.Write("<script>alert('Đăng nhập thành công');</script>");
-                Server.Transfer("sanpham.aspx");
+                Response.Redirect("sanpham.aspx");
             }
             else
             {
